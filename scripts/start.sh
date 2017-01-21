@@ -2,10 +2,12 @@
 
 # When this runs right after installing docker, then the current shell does not yet recognize the docker group membership
 if id -nG $USER | grep -qw  docker; then
+  echo "Outside"
   docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
 else
   # Create a new shell that knows about the docker group
-  sudo su - $USER << EOF
+  echo "Inside"
+  (sudo su - $USER << EOF
     docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
-  EOF
+  EOF)
 fi

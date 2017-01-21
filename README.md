@@ -61,6 +61,8 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
     ```docker logs minecraft```
   - Execute a command inside the container:
     ```docker exec minecraft <command>```
+  - If you get an error "Got permission denied while trying to connect to the Docker daemon socket." Close the terminal window and log back in. The reason for this error is that the shell needs to be restarted for the group change to take effect.
+  - If something fails during the installer, then just run the installer.sh script again.
 
 ## 3. Setup backup of world to Google cloud storage
 
@@ -68,10 +70,27 @@ The server installation script already established a backup mechnism that runs a
 If you want the backup file to be stored more permanently in a Google cloud storage bucket, you can do the following:
 
 1. Create a Google Cloud Storage bucket
+  - Go to the Google Cloud Console, click on the upper left menu button, and chose Storage
+  - Click on "Create Bucket"
+  - Name: world-backup
+  - Select Nearline
+  - CREATE
 
-2. Create an authenticationm key file for the storage bucket
+2. Create an authenticationm key file for the storage bucket: Google uses ssh keys for you to access Google resources. So, let's create a key first:
+  - Go to the Google Cloud Console, select the upper left menu button, and navigate to "API Manager"
+  - Click on "Credentials" on the left
+  - Click on "Create Credentials" and select "Service account key"
+  - Pick "Compute Engine Default Service Account"
+  - Chose "JSON" format
+  - Click CREATE
+  This downloads a key file. Secure this key and do NOT make it public. It gives access to your Google account.
 
-3. Get the keyfile to the server
+3. Get the keyfile to the server: Now that we downloaded a keyfile in the previous step, let's get it to our instance. The easiest way is to use cut and past:
+  - Open the keyfile in a text editor or open a terminal and print the keyfile in the terminal. On a Mac terminal you can use "cat keyfile.json"
+  - Select the text and cut it.
+  - Go to your instance terminal window and type ```nano keyfile.json```
+  - Paste the content into this file and save it.
+  - Make sure the keyfile.json is in the directoru minecraft-forge in your home directory.
 
 ## 4. Minecraft version
 
