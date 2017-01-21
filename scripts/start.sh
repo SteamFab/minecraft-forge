@@ -7,7 +7,5 @@ if id -nG $USER | grep -qw  docker; then
 else
   # Create a new shell that knows about the docker group
   echo "Inside"
-  (sudo su - $USER << EOF
-    docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
-  EOF)
+  sudo su - $USER -c "docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft"
 fi
