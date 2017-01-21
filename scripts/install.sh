@@ -25,15 +25,9 @@ if [ ! "$hasDocker" ]; then
   sudo apt-get install -y docker-engine
 
   # Make docker run without sudo
-  sudo systemctl status docker
+  #sudo systemctl status docker
   sudo usermod -aG docker $(whoami)
 fi
-
-# Install some additional utilities
-sudo apt-get -y install wget nano cron git
-
-# Install repository
-git clone https://github.com/SteamFab/minecraft-forge.git
 
 # Authenticate with Google cloud infrastructure
 if [ -f keyfile.json ]; then
