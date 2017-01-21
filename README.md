@@ -49,15 +49,15 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
     ```./minecraft-forge/scripts/install.sh```
 
 7. Start the Minecraft Forge server
-  '''./minecraft-forge/scripts/start.sh'''
+  ```./minecraft-forge/scripts/start.sh```
 
 8. Debug
   - Check that the Minecraft server container is running:
-    docker ps
+    ```docker ps```
   - Look at Minecraft server logs:
-    docker logs minecraft
+    ```docker logs minecraft```
   - Execute a command inside the container:
-    docker exec minecraft <command>
+    ```docker exec minecraft <command>```
 
 ## 3. Setup backup of world to Google cloud storage
 

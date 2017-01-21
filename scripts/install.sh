@@ -27,9 +27,6 @@ if [ ! "$hasDocker" ]; then
   # Make docker run without sudo
   #sudo systemctl status docker
   sudo usermod -aG docker $(whoami)
-  # Make group change effective by launching a new login
-  # You have to logout and then log back in to make it work permanently
-  sudo su - $USER
 fi
 
 # Setup cron for backup
@@ -49,8 +46,12 @@ fi
 echo "Successfully installed and configured the server"
 
 # Build the Minecraft container
-cd ~/minecraft-forge
-docker build -t minecraft .
+# Make group change effective by launching a new login
+# You have to logout and then log back in to make it work permanently
+sudo su - $USER << EOF
+  cd ~/minecraft-forge
+  docker build -t minecraft .
+EOF
 
 #docker service create -p 25565:25565 \
 #  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/world,destination=/home/minecraft/world \
