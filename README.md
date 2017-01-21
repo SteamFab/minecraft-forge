@@ -13,7 +13,7 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
 2. Go to the Google Compute Engine console (https://console.cloud.google.com/compute)
 3. Create a new instance
   - Name: minecraft
-  - Zone: <chose one>
+  - Zone: chose one
   - Machine type: Small one shared vCPU / 1.7 GB RAM (minimum machine)
   - Boot disk: Ubuntu 16.04 LTS, Boot disk type: SSD persistent disk, Size: 10 GB min, SELECT
   - Identity and API access: Default
@@ -45,13 +45,11 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
   - lick on SSH on the right
   - A terminal window should open with a command prompt (black screen)
   - Type the following commands:
-    - sudo apt-get update
-    - sudo apt-get install git
-    - git clone https://github.com/SteamFab/minecraft-forge.git
-    - ./minecraft-forge/scripts/install.sh
+    ```git clone https://github.com/SteamFab/minecraft-forge.git```
+    ```./minecraft-forge/scripts/install.sh```
 
 7. Start the Minecraft Forge server
-  - ./minecraft-forge/scripts/start.sh
+  '''./minecraft-forge/scripts/start.sh'''
 
 8. Debug
   - Check that the Minecraft server container is running:
