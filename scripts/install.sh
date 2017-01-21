@@ -27,14 +27,9 @@ if [ ! "$hasDocker" ]; then
   # Make docker run without sudo
   #sudo systemctl status docker
   sudo usermod -aG docker $(whoami)
-fi
-
-# Authenticate with Google cloud infrastructure
-if [ -f keyfile.json ]; then
-  gcloud auth activate-service-account --key-file keyfile.json
-else
-  echo "Missing keyfile"
-  exit 1
+  # Make group change effective by launching a new login
+  # You have to logout and then log back in to make it work permanently
+  sudo su - $USER
 fi
 
 # Setup cron for backup
@@ -60,5 +55,13 @@ docker service create -p 25565:25565 \
   --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/world,destination=/home/minecraft/world \
   --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/mods,destination=/home/minecraft/mods \
   --name minecraft minecraft
+
+# Authenticate with Google cloud infrastructure
+if [ -f keyfile.json ]; then
+  gcloud auth activate-service-account --key-file keyfile.json
+else
+  echo "Missing keyfile"
+  exit 1
+fi
 
 # gsutil cp xx.txt gs://world-backup
