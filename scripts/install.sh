@@ -35,7 +35,7 @@ fi
 # Setup cron for backup
 cd ~/minecraft-forge/scripts
 if [ -f backup.sh ]; then
-  if ] -f backup-cron ]; then
+  if [ -f backup-cron ]; then
     sudo cp backup-cron /etc/cron.d
   else
     echo "cron file missing"
@@ -52,18 +52,15 @@ echo "Successfully installed and configured the server"
 cd ~/minecraft-forge
 docker build -t minecraft .
 
-docker service create -p 25565:25565 \
-  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/world,destination=/home/minecraft/world \
-  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/mods,destination=/home/minecraft/mods \
-  --name minecraft minecraft
+#docker service create -p 25565:25565 \
+#  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/world,destination=/home/minecraft/world \
+#  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/mods,destination=/home/minecraft/mods \
+#  --name minecraft minecraft
 
 # Authenticate with Google cloud infrastructure
 cd ~/minecraft-forge
 if [ -f keyfile.json ]; then
   gcloud auth activate-service-account --key-file keyfile.json
 else
-  echo "Missing keyfile"
-  exit 1
+  echo "Missing keyfile. Backup only on local host."
 fi
-
-# gsutil cp xx.txt gs://world-backup
