@@ -33,6 +33,7 @@ if [ ! "$hasDocker" ]; then
 fi
 
 # Setup cron for backup
+cd ~/minecraft-forge/scripts
 if [ -f backup.sh ]; then
   if ] -f backup-cron ]; then
     sudo cp backup-cron /etc/cron.d
@@ -48,7 +49,7 @@ fi
 echo "Successfully installed and configured the server"
 
 # Build the Minecraft container
-cd minecraft-forge
+cd ~/minecraft-forge
 docker build -t minecraft .
 
 docker service create -p 25565:25565 \
@@ -57,6 +58,7 @@ docker service create -p 25565:25565 \
   --name minecraft minecraft
 
 # Authenticate with Google cloud infrastructure
+cd ~/minecraft-forge
 if [ -f keyfile.json ]; then
   gcloud auth activate-service-account --key-file keyfile.json
 else
