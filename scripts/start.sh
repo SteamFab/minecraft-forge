@@ -2,10 +2,10 @@
 
 # When this runs right after installing docker, then the current shell does not yet recognize the docker group membership
 if id -nG $USER | grep -qw  docker; then
-  docker run -rm -d -p 25565:25565  --restart=always -v ~/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
+  docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
 else
   # Create a new shell that knows about the docker group
   sudo su - $USER << EOF
-    docker run -rm -d -p 25565:25565  --restart=always -v ~/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
+    docker run -it -d -p 25565:25565  --restart=always -v /home/$USER/minecraft-forge/minecraft:/home/minecraft/server --name minecraft minecraft
   EOF
 fi

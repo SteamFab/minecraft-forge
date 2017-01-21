@@ -45,10 +45,11 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
   - lick on SSH on the right
   - A terminal window should open with a command prompt (black screen)
   - Type the following commands:
-    ```
+
+```
     git clone https://github.com/SteamFab/minecraft-forge.git
     ./minecraft-forge/scripts/install.sh
-    ```
+```
 
 7. Start the Minecraft Forge server
   ```./minecraft-forge/scripts/start.sh```

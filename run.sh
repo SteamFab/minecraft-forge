@@ -8,5 +8,5 @@ rsyslogd &
 #chown -R $NB_USER:users $HOME/world
 
 #start minecraft w/ user minecraft
-cd server
-su - $NB_USER -c "java -Xms1G -Xmx7G -d64 -jar ../forge-$VERSION-universal.jar"
+cd /home/$NB_USER/server
+su - $NB_USER -c "java -Xms1G -Xmx7G -d64 -jar /home/$NB_USER/forge-$VERSION-universal.jar"
