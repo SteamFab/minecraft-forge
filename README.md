@@ -1,47 +1,85 @@
-# minecraft-forge
+# Minecraft moded server (Forge) on Google Compute Engine using Docker
+
+Supported version: Minecraft 1.11.2
+
+This is to setup a moded Minecraft server in Google's compute cloud. It can run on a minimal server (1 vCPU w/ 1.7 GB RAM) at a cost of less than $20 per month.
+
+## 1. Prerequsites
+- Google Compute Engine account
+
+## 2. Installation steps
+
+1. If you don't already have one, create a Google compute engine account (https://cloud.google.com/compute/). You need a credit card for this.
+2. Go to the Google Compute Engine console (https://console.cloud.google.com/compute)
+3. Create a new instance
+  - Name: minecraft
+  - Zone: <chose one>
+  - Machine type: Small one shared vCPU / 1.7 GB RAM (minimum machine)
+  - Boot disk: Ubuntu 16.04 LTS, Boot disk type: SSD persistent disk, Size: 10 GB min, SELECT
+  - Identity and API access: Default
+  - Firewall: none
+  - CREATE
+
+4. Create the firewall rule:
+  - Click upper left menu, go to Networking (in the section compute)
+  - Click on Firewall rules on the left
+  - Create new firewall ruls (top)
+  - Chose the following:
+    - Name: minecraft-rule
+    - Network: default
+    - Source filter: Allow from any source (0.0.0.0)
+    - Allow protocols and ports: tcp:25565
+    - Target tags: minecraft-server
+    - CREATE
+
+5. Assign firewall rule to instance
+  - Go back to the Compute Engine console where you can see your instance
+  - Click on the instance
+  - Click EDIT at the top
+  - Scroll down to the line that says TAGS
+  - Enter a new tag: minecraft-server
+  - Scroll down and SAVE
+
+6. Install the server
+  - Go to Compute Cloud console where you can see your instance
+  - lick on SSH on the right
+  - A terminal window should open with a command prompt (black screen)
+  - Type the following commands:
+    - sudo apt-get update
+    - sudo apt-get install git
+    - git clone https://github.com/SteamFab/minecraft-forge.git
+    - ./minecraft-forge/scripts/install.sh
+
+7. Start the Minecraft Forge server
+  - ./minecraft-forge/scripts/start.sh
+
+8. Debug
+  - Check that the Minecraft server container is running:
+    docker ps
+  - Look at Minecraft server logs:
+    docker logs minecraft
+  - Execute a command inside the container:
+    docker exec minecraft <command>
+
+## 3. Setup backup of world to Google cloud storage
+
+The server installation script already established a backup mechnism that runs automatically every week on Sunday. It creates a compressed archive file (.tar.gz) of your world with a date / time stamp. This backup file resides on the server's disk.
+If you want the backup file to be stored more permanently in a Google cloud storage bucket, you can do the following:
+
+1. Create a Google Cloud Storage bucket
+
+2. Create an authenticationm key file for the storage bucket
+
+3. Get the keyfile to the server
+
+## 4. Minecraft version
+
+You can install a different version: Edit the Dockerfile and change the version variable.
+Mods have to fit
+
+## 5. Installing more mods
+
+Copy the mods into the mods directory using wget
+Rebuild the container and update
 
 
-gcloud auth login
-gcloud config set project luca-153221
-gcloud config set project steamfab-998
-
-gcloud compute instances list
-
-
-docker run -it -d -p 25565:25565 -e "GCLOUD_ACCOUNT=$(base64 Luca-af06bcb7b073.json )" -e "GCLOUD_ACCOUNT_EMAIL=luca-853@luca-153221.iam.gserviceaccount.com" --name mc mc
-
-
-gcloud compute ssh m8giccow --zone us-east1-d
-
-
-gcloud compute copy-files m8giccow:/home/minecraft/world.tar.gz .  --zone us-east1-d
-
-
-
-Ubuntu 16:04
-    1  sudo apt-get update
-    2  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-    3  sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-    4  sudo apt-get update
-    5  apt-cache policy docker-engine
-    6  sudo apt-get install -y docker-engine
-    7  sudo systemctl status docker
-    8  sudo usermod -aG docker $(whoami)
-    9  docker --version
-
-   13  git clone https://github.com/SteamFab/minecraft-forge.git
-   15  cd minecraft-forge/
-
-   40  nano kf.json
-   41  gcloud auth activate-service-account --key-file kf.json
-   42  gsutil cp xx.txt gs://world-backup
-
-
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.11.2-13.20.0.2222/forge-1.11.2-13.20.0.2222-installer.jar
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.11-13.19.1.2199/forge-1.11-13.19.1.2199-installer.jar
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.10.2-12.18.3.2221/forge-1.10.2-12.18.3.2221-installer.jar
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.10-12.18.0.2000-1.10.0/forge-1.10-12.18.0.2000-1.10.0-installer.jar
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9.4-12.17.0.2051/forge-1.9.4-12.17.0.2051-installer.jar
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9-12.16.1.1887/forge-1.9-12.16.1.1887-installer.jar
-
-http://adfoc.us/serve/sitelinks/?id=271228&url=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.5.2-7.8.1.738/forge-1.5.2-7.8.1.738-installer.jar
