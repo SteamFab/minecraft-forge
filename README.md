@@ -134,10 +134,10 @@ Check that it runs:
 You can install a different Minecraft version: Edit the Dockerfile and change the version variable.
 The Mods have to fit the Minecraft version. You have to change these manually in the Dockerfile to the correct version or comment them out.
 
-## Installing more mods: Copy the mods into the minecraft-server/minecraft/mods directory using wget on your instance:
-After you cloned this repo there will be a mods directory in minecraft-server/mods. This is where additional mods go. The easiest is to directly download them from a Web site using the wget command.
+## Installing more mods: Copy the mods into the minecraft-forge/minecraft/mods directory using wget on your instance:
+After you cloned this repo there will be a mods directory in minecraft/mods. This is where additional mods go. The easiest is to directly download them from a Web site using the wget command.
 <pre>
-  cd ~/minecraft-server/minecraft/mods
+  cd ~/minecraft-forge/minecraft/mods
   wget URL of your mod
 </pre>
   - Rebuild the container: Re-run the install.sh script.
@@ -145,7 +145,7 @@ After you cloned this repo there will be a mods directory in minecraft-server/mo
   - Restart Minecraft as described above.
 
 ## Restore world from backup
-The server's world directory is in minecraft-server/minecraft/world on your instance. To restore a backup you have to copy your existing world directory into this location. Before you delete the existing world directory you can copy it elsewhere or do a backup. 
+The server's world directory is in minecraft-forge/minecraft/world on your instance. To restore a backup you have to copy your existing world directory into this location. Before you delete the existing world directory you can copy it elsewhere or do a backup. 
 
   - zip or tar an existing world directory to create a single archive file. This can be on an existing server, a realm, or your local laptop / desktop computer.
   - Copy the archive to the new instance. This can be a little tricky. The easiest is to use Google's gcloud utility tool.
