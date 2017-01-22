@@ -67,6 +67,7 @@ This quick start procedure creates a new moded server with our default mods. It 
     git clone https://github.com/SteamFab/minecraft-forge.git
     ./minecraft-forge/scripts/install.sh
 </pre>
+  - Some errors (red text) are normal during the Minecraft server installation. Make sure the script completes successfully. It says so at the end. If not re-run the install.sh script. Sometimes the Minecraft download server seems to time out.
 
 7. Start the Minecraft Forge server
 
