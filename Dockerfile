@@ -60,7 +60,7 @@ RUN rm forge-$VERSION-installer.jar
 
 # Install some mods
 RUN cd mods/ && wget --quiet http://files.minecraftforge.net/maven/org/spongepowered/spongeforge/1.11.2-2201-6.0.0-BETA-2041/spongeforge-1.11.2-2201-6.0.0-BETA-2041.jar
-#RUN cd mods/ && wget --quiet https://addons-origin.cursecdn.com/files/2355/945/worldedit-forge-mc1.11-6.1.6-dist.jar
+RUN cd mods/ && wget --quiet https://addons-origin.cursecdn.com/files/2355/945/worldedit-forge-mc1.11-6.1.6-dist.jar
 RUN cd mods/ && wget --quiet https://addons-origin.cursecdn.com/files/2361/140/VeinMiner-1.11-0.35.3.605+dad98e1.jar
 
 #RUN cd mods/ && wget --quiet http://ci.forgeessentials.com/job/FE/1336/artifact/build/libs/forgeessentials-1.7.10-1.4.5.1336-server.jar

@@ -22,6 +22,7 @@ If you are an expert, here are the steps:
   - Clone this github repo and run the installer install.sh
   - Run the start script start.sh
   - Run the Minecraft client and log into your new server using the IP address of the instance
+  - To enable backups run backup-setup.sh (setup a Google storage bucket called world-backup first)
 This quick start procedure creates a new moded server with our default mods. It does not setup backups and you have not yet restored an existing world into the new server. Continue reading if that is what you want to do.
 
 ## Detailed installation steps
@@ -82,7 +83,7 @@ This quick start procedure creates a new moded server with our default mods. It 
 
 ## Setup backup of world to Google cloud storage
 
-The server installation script already established a backup mechnism that runs automatically every week on Sunday. It creates a compressed archive file (.tar.gz) of your world with a date / time stamp. This backup file resides on the server's disk.
+To established a backup mechnism that runs automatically every week on Sunday, create a file keyfile.json and run the script backup-setup.sh. It creates a compressed archive file (.tar.gz) of your world with a date / time stamp. This backup file resides on the server's disk.
 If you want the backup file to be stored more permanently in a Google cloud storage bucket, you can do the following:
 
 1. Create a Google Cloud Storage bucket
@@ -104,16 +105,28 @@ If you want the backup file to be stored more permanently in a Google cloud stor
 3. Get the keyfile to the server: Now that we downloaded a keyfile in the previous step, let's get it to our instance. The easiest way is to use cut and past:
   - Open the keyfile in a text editor or open a terminal and print the keyfile in the terminal. On a Mac terminal you can use "cat keyfile.json"
   - Select the text and cut it.
-  - Go to your instance terminal window and type ```nano keyfile.json```
+  - Go to your instance terminal window and type ```nano ~/minecraft-forge/keyfile.json```
   - Paste the content into this file and save it.
   - Make sure the keyfile.json is in the directoru minecraft-forge in your home directory.
-  - Now you need to re-run the install.sh script to activate the Google account.
+  - Now you need to run the backup-setup.sh  script to activate the Google account.
+<pre>
+    ./scripts/backup-setup.sh
+</pre>
+4. Debug backups
+  - Backups only run once a week on Sunday. To check: ```sudo cat /var/log/cron.log```
+  - The cron file is here: /etc/cron.d/backup-cron
+  - The backup script is here /root/backup.sh
 
-4. Restarting Minecraft: Restarting Minecraft means re-starting the Docker container it runs inside of:
+## Restarting Minecraft: Restarting Minecraft means re-starting the Docker container it runs inside of:
 <pre>
   docker stop minecraft
   docker rm minecraft
   ./scripts/start.sh
+</pre>
+Check that it runs:
+<pre>
+  docker ps
+  docker logs minecraft
 </pre>
 
 ## Minecraft version

@@ -11,18 +11,18 @@ else
 fi
 
 # source env variable MC_USER (created by backup-setup.sh)
-if [ -f user]; then
+if [ -f user ]; then
   source user
 else
-  echo "file user missing"
+  echo "file 'user' missing"
   exit 1
 fi
 
 #screen -r minecraft -X stuff '/save-all\n/save-off\n'
-tar czf $(date "+%Y%m%d-%H%M%S")-world.tar.gz /home/$MC_USER/minecraft/world
+tar czf $(date "+%Y%m%d-%H%M%S")-world.tar.gz /home/$MC_USER/minecraft-forge/minecraft/world
 
 # Store backup in Google Storage Bucket 'world-backup'
-/opt/google-cloud-sdk/bin/gsutil cp *-world.tar.gz  gs://world-backup
+/usr/bin/gsutil cp *-world.tar.gz  gs://world-backup
 
 # Cleanup
 rm *-world.tar.gz
