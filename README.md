@@ -112,12 +112,12 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Select the text and cut it.
   - Go to your instance terminal window and type ```nano ~/minecraft-forge/keyfile.json```
   - Paste the content into this file and save it.
-  - Make sure the keyfile.json is in the directoru minecraft-forge in your home directory.
-  - Now you need to run the backup-setup.sh  script to activate the Google account.
+  - Make sure the keyfile.json is in the directory "minecraft-forge" in your home directory.
+  - Now you need to run the backup-setup.sh script to activate the Google account.
 <pre>
-    ./scripts/backup-setup.sh
+    ~/minecraft-forge/scripts/backup-setup.sh
 </pre>
-4. Debug backups
+4. Debug backups - in case of trouble
   - Backups only run once a week on Sunday. To check: ```sudo cat /var/log/cron.log```
   - The cron file is here: /etc/cron.d/backup-cron
   - The backup script is here /root/backup.sh
