@@ -57,15 +57,13 @@ Default included mods:
 </pre>
 
 7. Start the Minecraft Forge server
-  ```./minecraft-forge/scripts/start.sh```
+
+<pre>./minecraft-forge/scripts/start.sh</pre>
 
 8. Debug
-  - Check that the Minecraft server container is running:
-    ```docker ps```
-  - Look at Minecraft server logs:
-    ```docker logs minecraft```
-  - Execute a command inside the container:
-    ```docker exec minecraft <command>```
+  - Check that the Minecraft server container is running: ```docker ps```
+  - Look at Minecraft server logs: ```docker logs minecraft```
+  - Execute a command inside the container: ```docker exec minecraft <command>```
   - If you get an error "Got permission denied while trying to connect to the Docker daemon socket." Close the terminal window and log back in. The reason for this error is that the shell needs to be restarted for the group change to take effect.
   - If something fails during the installer, then just run the installer.sh script again.
 
