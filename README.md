@@ -25,7 +25,7 @@ If you are an expert, here are the steps:
   - Clone this github repo and run the installer install.sh
   - Run the start script start.sh
   - Run the Minecraft client and log into your new server using the IP address of the instance
-  - To enable backups run backup-setup.sh (setup a Google storage bucket called world-backup first)
+  - To enable backups run backup-setup.sh (setup a Google storage bucket called world-backup first and save the keyfile.json to the instance)
 This quick start procedure creates a new moded server with our default mods. It does not setup backups and you have not yet restored an existing world into the new server. Continue reading if that is what you want to do.
 
 ## Detailed installation steps
@@ -100,7 +100,9 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Go to the Google Cloud Console, select the upper left menu button, and navigate to "API Manager"
   - Click on "Credentials" on the left
   - Click on "Create Credentials" and select "Service account key"
-  - Pick "Compute Engine Default Service Account"
+  - Pick "New Service Account" to create a new account
+  - Name: Give it some name
+  - Click on Role and scroll down to Storage. Select Object Storage Creator as the role.
   - Chose "JSON" format
   - Click CREATE
   This downloads a key file. Secure this key and do NOT make it public. It gives access to your Google account.
@@ -119,6 +121,9 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Backups only run once a week on Sunday. To check: ```sudo cat /var/log/cron.log```
   - The cron file is here: /etc/cron.d/backup-cron
   - The backup script is here /root/backup.sh
+
+OK, you're done with the installation. Below are some additional things you can do:
+---
 
 ## Restarting Minecraft: Restarting Minecraft means re-starting the Docker container it runs inside of:
 <pre>
