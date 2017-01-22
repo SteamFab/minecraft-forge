@@ -60,7 +60,7 @@ Default included mods:
 
 <pre>./minecraft-forge/scripts/start.sh</pre>
 
-8. Debug
+8. Debug - in case of trouble
   - Check that the Minecraft server container is running: ```docker ps```
   - Look at Minecraft server logs: ```docker logs minecraft```
   - Execute a command inside the container: ```docker exec minecraft <command>```
@@ -94,18 +94,45 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Go to your instance terminal window and type ```nano keyfile.json```
   - Paste the content into this file and save it.
   - Make sure the keyfile.json is in the directoru minecraft-forge in your home directory.
+  - Now you need to re-run the install.sh script to activate the Google account.
+
+4. Restarting Minecraft: Restarting Minecraft means re-starting the Docker container it runs inside of:
+<pre>
+  docker stop minecraft
+  docker rm minecraft
+  ./scripts/start.sh
+</pre>
 
 ## 4. Minecraft version
 
 You can install a different version: Edit the Dockerfile and change the version variable.
 Mods have to fit. You have to change these manually in the Dockerfile to the correct version or comment them out.
 
-## 5. Installing more mods
-
-Copy the mods into the mods directory using wget
-Rebuild the container and update
+## 5. Installing more mods: Copy the mods into the minecraft-server/minecraft/mods directory using wget:
+<pre>
+  cd ~/minecraft-server/minecraft/mods
+  wget <URL of your mod>
+</pre>
+  - Rebuild the container: Re-run the install.sh script
+  - Restart Minecraft as described above.
 
 ## 6. Restore world from backup
 
-zip or tar an existing world directory
-copy the archive to the new server.
+  - zip or tar an existing world directory to create a single archive file
+  - Copy the archive to the new server. This can be a little tricky. The easiest is to use Google's gcloud utility tool.
+    - Install gcloud on your computer
+    - Login to google: <pre>gcloud auth login</pre>
+    - A browser window opens. Login to your Google account and grant permission to gcloud.
+    - Now you can use gcloud to copy your world archive file to your instance:
+<pre>
+  gcloud compute instances list
+  gcloud compute copy-files <your archive file> <your instance name>:.
+</pre>
+    - Lo back into your instance by opening a terminal window
+    - Find the uploaded file: It is likely under a different account. Do this:
+<pre>
+  ls -l /home
+</pre>
+    - You see all the different accounts now. Use <pre>ls -l /home/<dir name></pre> to list content of the different directories to find the file you just uploaded.
+    - Once found move it to the minecraft-server/minecraft directory using the mv command
+    - Inflate or unzip the file

@@ -10,7 +10,7 @@ rsyslogd &
 #start minecraft w/ user minecraft
 ls -l /home/$NB_USER
 cd /home/$NB_USER
-
+cp -r mods server/
 cp -r libraries server/
 cp forge-$VERSION-universal.jar server/
 cp minecraft_server*.jar server/
