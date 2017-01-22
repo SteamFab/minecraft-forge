@@ -102,3 +102,5 @@ EXPOSE 25565
 COPY run.sh .
 
 ENTRYPOINT ["/root/run.sh"]
+RUN ls -l /home/$NB_USER
+RUN ls -l /home/$NB_USER/libraries
