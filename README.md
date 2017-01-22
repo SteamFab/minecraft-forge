@@ -5,14 +5,26 @@ Supported version: Minecraft 1.11.2
 This is to setup a moded Minecraft server in Google's compute cloud. It can run on a minimal server (1 vCPU w/ 1.7 GB RAM) at a cost of less than $20 per month.
 
 Default included mods:
-  - Sponge Forge
-  - VeinMiner
-  - Worldedit (produced an exception)
+  - Sponge Forge 1.11.2-2201
+  - VeinMiner 1.11-0.35.3.605 
+  - Worldedit 1.11-6.1.6
 
-## 1. Prerequsites
+To change or update the default mods you can change the Dockerfile.
+
+## Prerequsites
 - Google Compute Engine account
+- Some knowledge of Linux commands
 
-## 2. Installation steps
+## Quick start
+If you are an expert, here are the steps:
+  - Create an instance on Google Compute Cloud running Ubuntu 16.04 LTS
+  - Create a Google firewall rule to open port tcp:25565
+  - Clone this github repo and run the installer install.sh
+  - Run the start script start.sh
+  - Run the Minecraft client and log into your new server using the IP address of the instance
+This quick start procedure creates a new moded server with our default mods. It does not setup backups and you have not yet restored an existing world into the new server. Continue reading if that is what you want to do.
+
+## Detailed installation steps
 
 1. If you don't already have one, create a Google compute engine account (https://cloud.google.com/compute/). You need a credit card for this.
 2. Go to the Google Compute Engine console (https://console.cloud.google.com/compute)
@@ -67,7 +79,7 @@ Default included mods:
   - If you get an error "Got permission denied while trying to connect to the Docker daemon socket." Close the terminal window and log back in. The reason for this error is that the shell needs to be restarted for the group change to take effect.
   - If something fails during the installer, then just run the installer.sh script again.
 
-## 3. Setup backup of world to Google cloud storage
+## Setup backup of world to Google cloud storage
 
 The server installation script already established a backup mechnism that runs automatically every week on Sunday. It creates a compressed archive file (.tar.gz) of your world with a date / time stamp. This backup file resides on the server's disk.
 If you want the backup file to be stored more permanently in a Google cloud storage bucket, you can do the following:
@@ -103,36 +115,41 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   ./scripts/start.sh
 </pre>
 
-## 4. Minecraft version
+## Minecraft version
 
-You can install a different version: Edit the Dockerfile and change the version variable.
-Mods have to fit. You have to change these manually in the Dockerfile to the correct version or comment them out.
+You can install a different Minecraft version: Edit the Dockerfile and change the version variable.
+The Mods have to fit the Minecraft version. You have to change these manually in the Dockerfile to the correct version or comment them out.
 
-## 5. Installing more mods: Copy the mods into the minecraft-server/minecraft/mods directory using wget:
+## Installing more mods: Copy the mods into the minecraft-server/minecraft/mods directory using wget on your instance:
+After you cloned this repo there will be a mods directory in minecraft-server/mods. This is where additional mods go. The easiest is to directly download them from a Web site using the wget command.
 <pre>
   cd ~/minecraft-server/minecraft/mods
-  wget <URL of your mod>
+  wget URL of your mod
 </pre>
-  - Rebuild the container: Re-run the install.sh script
+  - Rebuild the container: Re-run the install.sh script.
+    Alternatively you can just run the docker build command: ```docker build -t minecraft .```
   - Restart Minecraft as described above.
 
-## 6. Restore world from backup
+## Restore world from backup
+The server's world directory is in minecraft-server/minecraft/world on your instance. To restore a backup you have to copy your existing world directory into this location. Before you delete the existing world directory you can copy it elsewhere or do a backup. 
 
-  - zip or tar an existing world directory to create a single archive file
-  - Copy the archive to the new server. This can be a little tricky. The easiest is to use Google's gcloud utility tool.
-    - Install gcloud on your computer
+  - zip or tar an existing world directory to create a single archive file. This can be on an existing server, a realm, or your local laptop / desktop computer.
+  - Copy the archive to the new instance. This can be a little tricky. The easiest is to use Google's gcloud utility tool.
+    - Install gcloud on your computer: https://cloud.google.com/sdk/downloads
     - Login to google: <pre>gcloud auth login</pre>
     - A browser window opens. Login to your Google account and grant permission to gcloud.
     - Now you can use gcloud to copy your world archive file to your instance:
 <pre>
   gcloud compute instances list
-  gcloud compute copy-files <your archive file> <your instance name>:.
+  gcloud compute copy-files your-archive-file your-instance-name:.
 </pre>
-    - Lo back into your instance by opening a terminal window
+    - Log back into your instance by opening a terminal window
     - Find the uploaded file: It is likely under a different account. Do this:
 <pre>
   ls -l /home
 </pre>
-    - You see all the different accounts now. Use <pre>ls -l /home/<dir name></pre> to list content of the different directories to find the file you just uploaded.
-    - Once found move it to the minecraft-server/minecraft directory using the mv command
-    - Inflate or unzip the file
+    - You see all the different account's home directories now. Use <pre>ls -l /home/dir-name</pre> to list content of the different home directories to find the file you just uploaded.
+    - Once found move it to the minecraft-server/minecraft directory using the mv command. Make sure you stop the Minecraft server container before doing this.
+    - Inflate or unzip the file. You might have to remove an already existing world directory before you do this.
+    - You should now have your world in the directory minecraft/world
+    - Now restart the Minecraft container
