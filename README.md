@@ -4,6 +4,11 @@ Supported version: Minecraft 1.11.2
 
 This is to setup a moded Minecraft server in Google's compute cloud. It can run on a minimal server (1 vCPU w/ 1.7 GB RAM) at a cost of less than $20 per month.
 
+Default included mods:
+  - Sponge Forge
+  - VeinMiner
+  - Worldedit (produced an exception)
+
 ## 1. Prerequsites
 - Google Compute Engine account
 
@@ -46,10 +51,10 @@ This is to setup a moded Minecraft server in Google's compute cloud. It can run 
   - A terminal window should open with a command prompt (black screen)
   - Type the following commands:
 
-```
+<pre>
     git clone https://github.com/SteamFab/minecraft-forge.git
     ./minecraft-forge/scripts/install.sh
-```
+</pre>
 
 7. Start the Minecraft Forge server
   ```./minecraft-forge/scripts/start.sh```
@@ -95,11 +100,14 @@ If you want the backup file to be stored more permanently in a Google cloud stor
 ## 4. Minecraft version
 
 You can install a different version: Edit the Dockerfile and change the version variable.
-Mods have to fit
+Mods have to fit. You have to change these manually in the Dockerfile to the correct version or comment them out.
 
 ## 5. Installing more mods
 
 Copy the mods into the mods directory using wget
 Rebuild the container and update
 
+## 6. Restore world from backup
 
+zip or tar an existing world directory
+copy the archive to the new server.

@@ -65,3 +65,5 @@ if [ -f keyfile.json ]; then
 else
   echo "Missing keyfile. Backup only on local host."
 fi
+
+echo "----> NOW logout or close this window and log back in. This makes your permission changes effective."
