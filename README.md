@@ -59,7 +59,7 @@ This quick start procedure creates a new moded server with our default mods. It 
 
 6. Install the server
   - Go to Compute Cloud console where you can see your instance
-  - lick on SSH on the right
+  - Click on SSH on the right
   - A terminal window should open with a command prompt (black screen)
   - Type the following commands:
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script to setup the instance server, install docker and dependencies, build the Minecraft docker container
 # Tested for Ubuntu 16.04.x LTS version
 
 # Do not run this as root but with user that has sudo permission
@@ -29,20 +30,6 @@ if [ ! "$hasDocker" ]; then
   sudo usermod -aG docker $(whoami)
 fi
 
-# Setup cron for backup
-cd ~/minecraft-forge/scripts
-if [ -f backup.sh ]; then
-  if [ -f backup-cron ]; then
-    sudo cp backup-cron /etc/cron.d
-  else
-    echo "cron file missing"
-    exit 1
-  fi
-else
-  echo "backup script missing"
-  exit 1
-fi
-
 echo "Successfully installed and configured the server"
 
 # Build the Minecraft container
@@ -53,17 +40,5 @@ sudo su - $USER << EOF
   docker build -t minecraft .
 EOF
 
-#docker service create -p 25565:25565 \
-#  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/world,destination=/home/minecraft/world \
-#  --mount type=bind,source=/Users/martinsteinmann/Documents/Projects/ml/minecraft-forge/mods,destination=/home/minecraft/mods \
-#  --name minecraft minecraft
-
-# Authenticate with Google cloud infrastructure
-cd ~/minecraft-forge
-if [ -f keyfile.json ]; then
-  gcloud auth activate-service-account --key-file keyfile.json
-else
-  echo "Missing keyfile. Backup only on local host."
-fi
-
+echo ""
 echo "----> NOW logout or close this window and log back in. This makes your permission changes effective."
