@@ -15,6 +15,9 @@ To change or update the default mods you can change the Dockerfile.
 - Google Compute Engine account
 - Some knowledge of Linux commands
 
+## Why Docker?
+Docker creates a reproducible environment. And it allows running Minecraft in a secure sandbox. We map the directory ./minecraft-forge/minecraft into the container and mount it at /home/minecraft/server. This means that no data is actually inside the container. Your world is accessible from the instance at minecraft-forge/minecraft/world. It is also an opportunity for you to learn more about Docker :)
+
 ## Quick start
 If you are an expert, here are the steps:
   - Create an instance on Google Compute Cloud running Ubuntu 16.04 LTS
@@ -102,7 +105,7 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Click CREATE
   This downloads a key file. Secure this key and do NOT make it public. It gives access to your Google account.
 
-3. Get the keyfile to the server: Now that we downloaded a keyfile in the previous step, let's get it to our instance. The easiest way is to use cut and past:
+3. Get the keyfile to the server: Now that we downloaded a keyfile in the previous step, let's get it to our instance. The easiest way is to use cut and paste:
   - Open the keyfile in a text editor or open a terminal and print the keyfile in the terminal. On a Mac terminal you can use "cat keyfile.json"
   - Select the text and cut it.
   - Go to your instance terminal window and type ```nano ~/minecraft-forge/keyfile.json```
