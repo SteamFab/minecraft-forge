@@ -77,12 +77,13 @@ This quick start procedure creates a new moded server with our default mods. It 
 
 <pre>./minecraft-forge/scripts/start.sh</pre>
 
-8. Debug - in case of trouble
+8. Debug - only in case of trouble
   - Check that the Minecraft server container is running: ```docker ps```
   - Look at Minecraft server logs: ```docker logs minecraft```
   - Execute a command inside the container: ```docker exec minecraft <command>```
   - If you get an error "Got permission denied while trying to connect to the Docker daemon socket." Close the terminal window and log back in. The reason for this error is that the shell needs to be restarted for the group change to take effect.
   - If something fails during the installer, then just run the installer.sh script again.
+  - You can also run the start.sh script again
 
 ## Setup backup of world to Google cloud storage
 
@@ -96,7 +97,7 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Select Nearline
   - CREATE
 
-2. Create an authenticationm key file for the storage bucket: Google uses ssh keys for you to access Google resources. So, let's create a key first:
+2. Create an authentication keyfile for the storage bucket: Google uses ssh keys for you to access Google resources. So, let's create a key first:
   - Go to the Google Cloud Console, select the upper left menu button, and navigate to "API Manager"
   - Click on "Credentials" on the left
   - Click on "Create Credentials" and select "Service account key"
@@ -105,33 +106,33 @@ If you want the backup file to be stored more permanently in a Google cloud stor
   - Click on Role and scroll down to Storage. Select Object Storage Creator as the role.
   - Chose "JSON" format
   - Click CREATE
-  This downloads a key file. Secure this key and do NOT make it public. It gives access to your Google account.
+  The browser now downloads a key file under some name. It is most likely in your Downloads directory. Secure this key and do NOT make it public. It gives access to your Google account.
 
 3. Get the keyfile to the server: Now that we downloaded a keyfile in the previous step, let's get it to our instance. The easiest way is to use cut and paste:
-  - Open the keyfile in a text editor or open a terminal and print the keyfile in the terminal. On a Mac terminal you can use "cat keyfile.json"
-  - Select the text and cut it.
+  - Open the keyfile in a text editor or open a terminal and print the keyfile in the terminal. On a Mac terminal you can use "cat keyfile.json". On Windows you can open the keyfile in Notepad.
+  - Select the text and copy it.
   - Go to your instance terminal window and type ```nano ~/minecraft-forge/keyfile.json```
-  - Paste the content into this file and save it.
-  - Make sure the keyfile.json is in the directory "minecraft-forge" in your home directory.
+  - Paste the content of the keyfile into this file and save it.
+  - Make sure the file keyfile.json is in the directory "minecraft-forge" in your home directory on your instance.
   - Now you need to run the backup-setup.sh script to activate the Google account.
 <pre>
     ~/minecraft-forge/scripts/backup-setup.sh
 </pre>
-4. Debug backups - in case of trouble
+4. Debug backups - only in case of trouble
   - Backups only run once a week on Sunday. To check: ```sudo cat /var/log/cron.log```
   - The cron file is here: /etc/cron.d/backup-cron
   - The backup script is here /root/backup.sh
+  - Backed up files can be found in the Google Cloud Console under Storage. Click on the bucket name to open it up.
 
 OK, you're done with the installation. Below are some additional things you can do:
 ---
 
-## Restarting Minecraft: Restarting Minecraft means re-starting the Docker container it runs inside of:
+## Restarting Minecraft
+Restarting Minecraft means re-starting the Docker container it runs inside of. To do this just rerun the start script. It executes a 'docker stop minecraft' and 'docker rm minecraft' if the Minecraft container is still running.
 <pre>
-  docker stop minecraft
-  docker rm minecraft
-  ./scripts/start.sh
+  ~/minecraft-forge/scripts/start.sh
 </pre>
-Check that it runs:
+Check that the Minecraft container is running:
 <pre>
   docker ps
   docker logs minecraft
