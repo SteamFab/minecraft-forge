@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     default-jre-headless \
     wget \
     rsyslog \
-    unzip
+    unzip \
+    locales
 
 RUN update-ca-certificates -f
 
