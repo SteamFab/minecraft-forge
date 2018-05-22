@@ -58,6 +58,7 @@ RUN cd mods/ && wget  https://media.forgecdn.net/files/2425/847/ironchest-1.10.2
 RUN cd mods/ && wget  https://media.forgecdn.net/files/2518/860/JurassiCraft-2.1.3-Fix.jar
 RUN cd mods/ && wget  https://media.forgecdn.net/files/2425/964/TConstruct-1.10.2-2.6.5.jar
 RUN cd mods/ && wget  https://media.forgecdn.net/files/2498/641/MineFactoryReloaded-%5b1.10.2%5d2.9.0B1-230.jar
+RUN cd mods/ && wget https://media.forgecdn.net/files/2461/99/llibrary-1.7.7-1.10.2.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
