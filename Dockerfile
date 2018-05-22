@@ -59,6 +59,8 @@ RUN cd mods/ && wget  https://media.forgecdn.net/files/2518/860/JurassiCraft-2.1
 RUN cd mods/ && wget  https://media.forgecdn.net/files/2425/964/TConstruct-1.10.2-2.6.5.jar
 RUN cd mods/ && wget  https://media.forgecdn.net/files/2498/641/MineFactoryReloaded-%5b1.10.2%5d2.9.0B1-230.jar
 RUN cd mods/ && wget https://media.forgecdn.net/files/2461/99/llibrary-1.7.7-1.10.2.jar
+RUN cd mods/ && wget https://media.forgecdn.net/files/2469/611/CoFHCore-1.10.2-4.1.12.17-universal.jar
+RUN cd mods/ && wget https://media.forgecdn.net/files/2509/806/CodeChickenLib-1.10.2-2.5.9.320-universal.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
