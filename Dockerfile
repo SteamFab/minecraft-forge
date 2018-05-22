@@ -53,12 +53,12 @@ RUN rm forge-$VERSION-installer.jar
 #RUN cd mods/ && wget --quiet https://addons-origin.cursecdn.com/files/2460/570/worldedit-forge-mc1.12-6.1.8-dist.jar
 #RUN cd mods/ && wget --quiet https://addons-origin.cursecdn.com/files/2456/533/VeinMiner-1.12-0.38.0.633+f768836.jar
 RUN mkdir mods
-RUN cd mods/ && wget --quite https://addons.cursecdn.com/files/2454/983/appliedenergistics2-rv4-stable-1.jar
-RUN cd mods/ && wget --quite https://addons.cursecdn.com/files/2425/769/BiomesOPlenty-1.10.2-5.0.0.2236-universal.jar
-RUN cd mods/ && wget --quite https://media.forgecdn.net/files/2425/847/ironchest-1.10.2-7.0.15.804.jar
-RUN cd mods/ && wget --quite https://media.forgecdn.net/files/2518/860/JurassiCraft-2.1.3-Fix.jar
-RUN cd mods/ && wget --quite https://media.forgecdn.net/files/2425/964/TConstruct-1.10.2-2.6.5.jar
-RUN cd mods/ && wget --quite https://media.forgecdn.net/files/2498/641/MineFactoryReloaded-%5b1.10.2%5d2.9.0B1-230.jar
+RUN cd mods/ && wget  https://addons.cursecdn.com/files/2454/983/appliedenergistics2-rv4-stable-1.jar
+RUN cd mods/ && wget  https://addons.cursecdn.com/files/2425/769/BiomesOPlenty-1.10.2-5.0.0.2236-universal.jar
+RUN cd mods/ && wget  https://media.forgecdn.net/files/2425/847/ironchest-1.10.2-7.0.15.804.jar
+RUN cd mods/ && wget  https://media.forgecdn.net/files/2518/860/JurassiCraft-2.1.3-Fix.jar
+RUN cd mods/ && wget  https://media.forgecdn.net/files/2425/964/TConstruct-1.10.2-2.6.5.jar
+RUN cd mods/ && wget  https://media.forgecdn.net/files/2498/641/MineFactoryReloaded-%5b1.10.2%5d2.9.0B1-230.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
