@@ -62,6 +62,7 @@ RUN cd mods/ && wget https://media.forgecdn.net/files/2461/99/llibrary-1.7.7-1.1
 RUN cd mods/ && wget https://media.forgecdn.net/files/2469/611/CoFHCore-1.10.2-4.1.12.17-universal.jar
 RUN cd mods/ && wget https://media.forgecdn.net/files/2509/806/CodeChickenLib-1.10.2-2.5.9.320-universal.jar
 RUN cd mods/ && wget https://media.forgecdn.net/files/2380/279/Mantle-1.10.2-1.1.5.jar
+RUN cd mods/ && wget https://media.forgecdn.net/files/2441/757/Treecapitator-1.10.2-at_0.9.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
