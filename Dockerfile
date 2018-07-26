@@ -65,7 +65,7 @@ RUN rm forge-$VERSION-installer.jar
 #RUN cd mods/ && wget https://media.forgecdn.net/files/2380/279/Mantle-1.10.2-1.1.5.jar
 #RUN cd mods/ && wget https://media.forgecdn.net/files/2441/757/Treecapitator-1.10.2-at_0.9.jar
 #RUN cd mods/ && wget https://media.forgecdn.net/files/2528/282/VeinMiner-1.9-0.38.2.624%2B127e28f.jar
-RUN cd mods/ && wget https://media.forgecdn.net/files/2460/570/worldedit-forge-mc1.12-6.1.8-dist.jar
+RUN cd mods server/ && wget https://media.forgecdn.net/files/2460/570/worldedit-forge-mc1.12-6.1.8-dist.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
