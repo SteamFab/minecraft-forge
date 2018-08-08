@@ -62,10 +62,8 @@ RUN cd mods/ && wget --quiet https://maven.tterrag.com/index.php?dir=com%2Fender
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2570/118/TinkerToolLeveling-1.12.2-1.0.5.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2570/118/TinkerToolLeveling-1.12.2-1.0.5.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2597/800/EnderIO-1.12.2-5.0.31.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/711/Draconic-Evolution-1.12.2-2.3.13.306-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2581/238/UniDict-1.12.2-2.5f.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2530/225/OpenBlocks-1.12.2-1.7.6.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2572/881/Mekanism-1.12.2-9.4.13.349.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2496/769/JRFTL%5b1.12.2%5d-1.1.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2557/247/ProjectE-1.12-PE1.3.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/241/ChickenChunks-1.12.2-2.4.1.73-universal.jar
