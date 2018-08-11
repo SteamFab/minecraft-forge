@@ -93,6 +93,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2567/263/CoFHWorld
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2534/271/WanionLib-1.12.2-1.5.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2567/260/RedstoneFlux-1.12-2.0.2.3-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2573/311/Forgelin-1.7.4.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/909/154/PermissionsEx-1.23.4.jar
 
 # Configure remaining tasks for root user
 USER root
