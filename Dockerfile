@@ -47,7 +47,13 @@ RUN rm forge-$VERSION-installer.jar
 
 # Install some mods
 RUN mkdir mods
-
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2486/444/Hats-1.12.2-7.0.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2571/785/TConstruct-1.12.2-2.10.1.87.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2609/899/conarm-1.12.2-1.1.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2570/118/TinkerToolLeveling-1.12.2-1.0.5.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2611/991/extrautils2-1.12-1.9.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2550/550/Mantle-1.12-1.3.2.24.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2510/760/iChunUtil-1.12.2-7.1.4.jar
 
 # Configure remaining tasks for root user
 USER root
