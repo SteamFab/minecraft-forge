@@ -54,6 +54,14 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2570/118/TinkerToo
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2611/991/extrautils2-1.12-1.9.1.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2550/550/Mantle-1.12-1.3.2.24.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2510/760/iChunUtil-1.12.2-7.1.4.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2528/295/VeinMiner-1.12-0.38.2.647%2Bb31535a.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2496/769/JRFTL%5b1.12.2%5d-1.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2530/225/OpenBlocks-1.12.2-1.7.6.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2525/230/OpenModsLib-1.12.2-0.11.5.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/241/ChickenChunks-1.12.2-2.4.1.73-universal.jar
+
+
 
 # Configure remaining tasks for root user
 USER root
