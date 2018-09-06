@@ -60,6 +60,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2530/225/OpenBlock
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2525/230/OpenModsLib-1.12.2-0.11.5.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/241/ChickenChunks-1.12.2-2.4.1.73-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2543/840/appliedenergistics2-rv5-stable-11.jar
 
 
 
