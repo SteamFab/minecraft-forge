@@ -63,6 +63,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/241/ChickenCh
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2543/840/appliedenergistics2-rv5-stable-11.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2611/207/furniture-5.8.0-1.12.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2517/377/enderpay-1.12.2-1.0.1.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/842/EnderStorage-1.12.2-2.4.2.126-universal.jar
 
 
 
