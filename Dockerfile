@@ -49,7 +49,6 @@ RUN rm forge-$VERSION-installer.jar
 RUN mkdir mods
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2486/444/Hats-1.12.2-7.0.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2571/785/TConstruct-1.12.2-2.10.1.87.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2609/899/conarm-1.12.2-1.1.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2570/118/TinkerToolLeveling-1.12.2-1.0.5.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2611/991/extrautils2-1.12-1.9.1.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2550/550/Mantle-1.12-1.3.2.24.jar
@@ -62,9 +61,10 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/241/ChickenChunks-1.12.2-2.4.1.73-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2543/840/appliedenergistics2-rv5-stable-11.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2611/207/furniture-5.8.0-1.12.2.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2517/377/enderpay-1.12.2-1.0.1.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/842/EnderStorage-1.12.2-2.4.2.126-universal.jar
-
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2608/537/JurassiCraft-1.12.2-2.1.17.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/507/WirelessCraftingTerminal-1.12.2-3.9.68.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2616/512/Pam%27s+HarvestCraft+1.12.2z.jar
 
 
 
