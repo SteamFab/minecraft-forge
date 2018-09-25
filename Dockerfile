@@ -65,6 +65,11 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/842/EnderStor
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2608/537/JurassiCraft-1.12.2-2.1.17.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/507/WirelessCraftingTerminal-1.12.2-3.9.68.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2616/512/Pam%27s+HarvestCraft+1.12.2z.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/630/CodeChickenLib-1.12.2-3.2.2.353-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2598/753/llibrary-1.7.15-1.12.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2616/338/p455w0rdslib-1.12-2.0.35.jar
+
+
 
 
 
