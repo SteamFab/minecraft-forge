@@ -47,6 +47,15 @@ RUN rm forge-$VERSION-installer.jar
 
 # Install some mods
 RUN mkdir mods
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2652/453/appliedenergistics2-rv6-stable-6.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2657/445/TConstruct-1.12.2-2.12.0.113.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2630/860/TinkerToolLeveling-1.12.2-1.1.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2655/56/worldedit-forge-mc1.12.2-6.1.10-SNAPSHOT-dist.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2528/295/VeinMiner-1.12-0.38.2.647%2Bb31535a.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/842/EnderStorage-1.12.2-2.4.2.126-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2638/52/ironchest-1.12.2-7.0.54.838.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2487/838/Hats-1.12.2-7.0.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/851/NotEnoughItems-1.12.2-2.4.1.233-universal.jar
 
 
 
