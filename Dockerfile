@@ -47,6 +47,7 @@ RUN rm forge-$VERSION-installer.jar
 
 # Install some mods
 RUN mkdir mods
+RUN mkdir mods
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2652/453/appliedenergistics2-rv6-stable-6.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2657/445/TConstruct-1.12.2-2.12.0.113.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2630/860/TinkerToolLeveling-1.12.2-1.1.0.jar
@@ -55,8 +56,10 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2528/295/VeinMiner
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/842/EnderStorage-1.12.2-2.4.2.126-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2638/52/ironchest-1.12.2-7.0.54.838.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2487/838/Hats-1.12.2-7.0.2.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2509/851/NotEnoughItems-1.12.2-2.4.1.233-universal.jar
-
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/630/CodeChickenLib-1.12.2-3.2.2.353-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2487/842/iChunUtil-1.12.2-7.0.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2630/843/Mantle-1.12-1.3.3.39.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2660/28/jei_1.12.2-4.14.4.254.jar
 
 
 
