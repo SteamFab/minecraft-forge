@@ -70,7 +70,11 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2676/458/Integrati
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2683/645/%5b1.12.2%5d+SecurityCraft+v1.8.12.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2481/605/WailaHarvestability-mc1.12-1.1.12.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2666/930/Wawla-1.12.2-2.5.269.jar
-
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2673/898/ModularPowersuits-1.12.2-0.7.0.035.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2499/846/davincisvessels-1.12-6.340-full.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2620/52/OpenBlocks-1.12.2-1.8.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2485/41/movingworld-1.12.2-6.342-full.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/7/OpenModsLib-1.12.2-0.12.1.jar
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
