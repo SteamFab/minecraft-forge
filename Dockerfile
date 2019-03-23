@@ -81,6 +81,10 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/258/ThermalFo
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/253/CoFHCore-1.12.2-4.6.2.25-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2487/838/Hats-1.12.2-7.0.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2650/315/Pam%27s+HarvestCraft+1.12.2zb.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/91/CoFHWorld-1.12.2-1.3.0.6-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/90/RedstoneFlux-1.12-2.1.0.6-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2665/717/energyconverters_1.12.2-1.2.1.11.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2664/570/industrialcraft-2-2.8.109-ex112.jar
 
 # Configure remaining tasks for root user
 USER root
