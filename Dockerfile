@@ -75,6 +75,13 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2499/846/davincisv
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2620/52/OpenBlocks-1.12.2-1.8.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2485/41/movingworld-1.12.2-6.342-full.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/7/OpenModsLib-1.12.2-0.12.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/256/ThermalDynamics-1.12.2-2.5.4.18-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/257/ThermalExpansion-1.12.2-5.5.3.41-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/258/ThermalFoundation-1.12.2-2.6.2.26-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/253/CoFHCore-1.12.2-4.6.2.25-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2487/838/Hats-1.12.2-7.0.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2650/315/Pam%27s+HarvestCraft+1.12.2zb.jar
+
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
