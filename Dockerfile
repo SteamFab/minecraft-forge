@@ -23,7 +23,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 # Configure environment
-ENV VERSION 1.12.2-14.23.5.2768
+ENV VERSION 1.12.2-14.23.5.2841
 ENV SHELL /bin/bash
 ENV NB_USER minecraft
 ENV NB_UID 1000
@@ -39,7 +39,7 @@ USER $NB_USER
 
 # download and unpack Minecraft
 WORKDIR $HOME
-RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2768-installer.jar
+RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2841-installer.jar
 
 # run Minecraft installer
 RUN java -jar forge-$VERSION-installer.jar --installServer
