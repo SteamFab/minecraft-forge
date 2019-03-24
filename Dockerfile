@@ -60,7 +60,6 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2568/751/Hwyla-1.8
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2684/0/iChunUtil-1.12.2-7.2.1.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2687/546/industrialforegoing-1.12.2-1.12.8-232.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2682/936/jei_1.12.2-4.15.0.268.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2622/466/magicalcrops-1.0.2-MC-1.12.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2671/124/Mantle-1.12-1.3.3.42.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2640/952/Forgelin-1.8.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2580/52/tesla-core-lib-1.12.2-1.0.15.jar
@@ -85,6 +84,8 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/91/CoFHWorld-
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/90/RedstoneFlux-1.12-2.1.0.6-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2665/717/energyconverters_1.12.2-1.2.1.11.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2664/570/industrialcraft-2-2.8.109-ex112.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2680/943/MysticalAgriculture-1.12.2-1.7.3.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2645/867/Cucumber-1.12.2-1.1.3.jar
 
 # Configure remaining tasks for root user
 USER root
