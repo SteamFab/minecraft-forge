@@ -23,7 +23,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 # Configure environment
-ENV VERSION 1.12.2-14.23.5.2841
+ENV VERSION 1.12.2-14.23.5.2810
 ENV SHELL /bin/bash
 ENV NB_USER minecraft
 ENV NB_UID 1000
@@ -39,7 +39,7 @@ USER $NB_USER
 
 # download and unpack Minecraft
 WORKDIR $HOME
-RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2841-installer.jar
+RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2810/forge-1.12.2-14.23.5.2810-installer.jar
 
 # run Minecraft installer
 RUN java -jar forge-$VERSION-installer.jar --installServer
@@ -72,7 +72,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2666/930/Wawla-1.1
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2673/898/ModularPowersuits-1.12.2-0.7.0.035.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2499/846/davincisvessels-1.12-6.340-full.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2620/52/OpenBlocks-1.12.2-1.8.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2485/41/movingworld-1.12.2-6.342-full.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2485/41/movingworld-1.12-2.6.342-full.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/7/OpenModsLib-1.12.2-0.12.1.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/256/ThermalDynamics-1.12.2-2.5.4.18-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/257/ThermalExpansion-1.12.2-5.5.3.41-universal.jar
