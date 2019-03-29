@@ -86,6 +86,16 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2665/717/energycon
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2664/570/industrialcraft-2-2.8.109-ex112.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2680/943/MysticalAgriculture-1.12.2-1.7.3.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2645/867/Cucumber-1.12.2-1.1.3.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2678/374/extrautils2-1.12-1.9.9.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2619/468/Chisel-MC1.12.2-0.2.1.35.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2491/32/ae2stuff-0.7.0.4-mc1.12.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2654/188/WirelessCraftingTerminal-1.12.2-3.11.88.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/31/bdlib-1.14.3.12-mc1.12.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2651/697/p455w0rdslib-1.12.2-2.0.36.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2653/753/AE2WTLib-1.12.2-1.0.6.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2671/242/MysticalAgradditions-1.12.2-1.3.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2649/656/BrandonsCore-1.12.2-2.4.9.195-universal.jar
 
 # Configure remaining tasks for root user
 USER root
