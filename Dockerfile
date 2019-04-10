@@ -77,6 +77,8 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2693/496/TConstruc
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2630/860/TinkerToolLeveling-1.12.2-1.1.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2696/150/CookingForBlockheads_1.12.2-6.4.70.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2693/483/Mantle-1.12-1.3.3.49.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2619/468/Chisel-MC1.12.2-0.2.1.35.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2642/375/CTM-MC1.12.2-0.3.3.22.jar
 
 
 # Configure remaining tasks for root user
