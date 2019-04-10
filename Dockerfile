@@ -57,7 +57,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/31/bdlib-1.14
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2473/983/chococraft_1.12.1-0.9.1.52.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/630/CodeChickenLib-1.12.2-3.2.2.353-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/253/CoFHCore-1.12.2-4.6.2.25-universal.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2513/671/CoFHWorld-1.12.2-1.1.1.12-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/91/CoFHWorld-1.12.2-1.3.0.6-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2692/118/EnderIO-1.12.2-5.0.43.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/243/EnderStorage-1.12.2-2.4.5.135-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2696/287/EnderCore-1.12.2-0.5.53.jar
