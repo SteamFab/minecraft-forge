@@ -59,8 +59,6 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/630/CodeChick
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/253/CoFHCore-1.12.2-4.6.2.25-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2513/671/CoFHWorld-1.12.2-1.1.1.12-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2692/118/EnderIO-1.12.2-5.0.43.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2692/108/EnderIO-base-1.12.2-5.0.43.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2692/110/EnderIO-conduits-1.12.2-5.0.43.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2594/243/EnderStorage-1.12.2-2.4.5.135-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2696/287/EnderCore-1.12.2-0.5.53.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2678/374/extrautils2-1.12-1.9.9.jar
