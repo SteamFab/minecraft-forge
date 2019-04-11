@@ -47,8 +47,8 @@ RUN rm forge-$VERSION-installer.jar
 
 # Install some mods
 RUN mkdir mods
-RUN cd mods/ && wget --quiet https://ore.spongepowered.org/Nucleus/Nucleus/versions/recommended/download
-RUN cd mods/ && wget --quiet https://repo.spongepowered.org/maven/org/spongepowered/spongeforge/1.12.2-2768-7.1.5/spongeforge-1.12.2-2768-7.1.5.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2496/769/JRFTL%5b1.12.2%5d-1.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2524/58/ChestTransporter-1.12.2-2.8.8.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2652/182/Advanced+Solar+Panels-4.3.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2491/32/ae2stuff-0.7.0.4-mc1.12.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2652/453/appliedenergistics2-rv6-stable-6.jar
@@ -79,8 +79,21 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2696/150/CookingFo
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2693/483/Mantle-1.12-1.3.3.49.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2619/468/Chisel-MC1.12.2-0.2.1.35.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2642/375/CTM-MC1.12.2-0.3.3.22.jar
-
-
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2574/880/BiblioCraft%5bv2.4.5%5d%5bMC1.12.2%5d.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2654/304/bonsaitrees-1.1.2-b144.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2670/493/ironchest-1.12.2-7.0.59.842.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2568/464/Streams-1.12-0.4.4.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2575/149/simpleharvest-1.08.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2531/68/FenceOverhaul-1.3.4.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2564/573/IronBackpacks-1.12.2-3.0.8-12.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2561/617/secretroomsmod-1.12.2-5.6.4.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2677/96/Botania+r1.10-360.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2453/251/MusicCraft-3.2.3.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2644/653/BiomesOPlenty-1.12.2-7.0.1.2419-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2492/586/RoguelikeDungeons-1.12.2-1.8.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2671/342/fossilsarcheology-8.0.0.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/264/twilightforest-1.12.2-3.8.689-universal.jar
+ 
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
