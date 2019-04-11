@@ -93,6 +93,9 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2644/653/BiomesOPl
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2492/586/RoguelikeDungeons-1.12.2-1.8.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2671/342/fossilsarcheology-8.0.0.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/264/twilightforest-1.12.2-3.8.689-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2685/412/llibrary-1.7.18-1.12.2.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2583/91/Farseek-1.12-2.3.1.jar
  
 # Configure remaining tasks for root user
 USER root
