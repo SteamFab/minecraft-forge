@@ -23,7 +23,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 # Configure environment
-ENV VERSION 1.12.2-14.23.5.2810
+ENV VERSION 1.12.2-14.23.5.2837
 ENV SHELL /bin/bash
 ENV NB_USER minecraft
 ENV NB_UID 1000
@@ -39,7 +39,7 @@ USER $NB_USER
 
 # download and unpack Minecraft
 WORKDIR $HOME
-RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2810/forge-1.12.2-14.23.5.2810-installer.jar
+RUN wget --quiet https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2837/forge-1.12.2-14.23.5.2837-installer.jar
 
 # run Minecraft installer
 RUN java -jar forge-$VERSION-installer.jar --installServer
@@ -97,6 +97,10 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/264/twilightf
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2685/412/llibrary-1.7.18-1.12.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2583/91/Farseek-1.12-2.3.1.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2670/570/zerocore-1.12.2-0.1.2.8.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2580/52/tesla-core-lib-1.12.2-1.0.15.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2714/365/mcjtylib-1.12-3.5.3.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2450/900/Chameleon-1.12-4.1.3.jar
 
 # Configure remaining tasks for root user
 USER root
