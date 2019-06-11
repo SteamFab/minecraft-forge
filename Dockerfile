@@ -88,7 +88,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2699/878/industria
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2676/458/IntegrationForegoing-1.12.2-1.9.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2564/573/IronBackpacks-1.12.2-3.0.8-12.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2561/617/secretroomsmod-1.12.2-5.6.4.jar
-RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2677/96/Botania+r1.10-360.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2722/271/ExtremeReactors-1.12.2-0.4.5.67.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2453/251/MusicCraft-3.2.3.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2644/653/BiomesOPlenty-1.12.2-7.0.1.2419-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2492/586/RoguelikeDungeons-1.12.2-1.8.0.jar
