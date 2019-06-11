@@ -55,6 +55,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2690/723/refinedst
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2719/436/jei_1.12.2-4.15.0.280.jar 
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/31/bdlib-1.14.3.12-mc1.12.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2716/138/ThermalDynamics-1.12.2-2.5.5.21-universal.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2717/443/Pam%27s+HarvestCraft+1.12.2zd+Surprise+for+Yogcast.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/630/CodeChickenLib-1.12.2-3.2.2.353-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2669/253/CoFHCore-1.12.2-4.6.2.25-universal.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2623/91/CoFHWorld-1.12.2-1.3.0.6-universal.jar
@@ -96,7 +97,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2618/264/twilightf
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2518/667/Baubles-1.12-1.5.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2685/412/llibrary-1.7.18-1.12.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2583/91/Farseek-1.12-2.3.1.jar
- 
+
 # Configure remaining tasks for root user
 USER root
 WORKDIR /root
