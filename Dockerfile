@@ -101,6 +101,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2670/570/zerocore-
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2580/52/tesla-core-lib-1.12.2-1.0.15.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2714/365/mcjtylib-1.12-3.5.3.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2450/900/Chameleon-1.12-4.1.3.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2640/952/Forgelin-1.8.2.jar
 
 # Configure remaining tasks for root user
 USER root
