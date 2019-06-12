@@ -1,13 +1,9 @@
 # Minecraft moded server (Forge) on Google Compute Engine using Docker
 
-Supported version: Minecraft 1.11.2
+Supported version: Any forge version
 
 This is to setup a moded Minecraft server in Google's compute cloud. It can run on a minimal server (1 vCPU w/ 1.7 GB RAM) at a cost of less than $20 per month.
 
-Default included mods:
-  - Sponge Forge 1.11.2-2201
-  - VeinMiner 1.11-0.35.3.605 
-  - Worldedit 1.11-6.1.6
 
 To change or update the default mods you can change the Dockerfile.
 
