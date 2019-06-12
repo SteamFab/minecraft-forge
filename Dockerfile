@@ -104,6 +104,7 @@ RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2450/900/Chameleon
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2640/952/Forgelin-1.8.2.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2609/648/AgriCraft-2.12.0-1.12.0-a6.jar
 RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2622/466/magicalcrops-1.0.2-MC-1.12.jar
+RUN cd mods/ && wget --quiet https://media.forgecdn.net/files/2537/265/infinitylib-1.12.0.jar
 
 # Configure remaining tasks for root user
 USER root
